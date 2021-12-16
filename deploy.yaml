@@ -22,7 +22,7 @@ spec:
         
       containers:
       - name: argo-tag-test
-        image: orca-harbor.cloud.hancom.com/test-harbor/tag
+        image: orca-harbor.cloud.hancom.com/test-harbor/tag:latest
         resources: {}
         command:
         - sleep
