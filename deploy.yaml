@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: argo-tag-test
+  name: argo-tag-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-tag-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: argo-tag-test
+    spec:
+      imagePullSecrets:
+      - name: test-harbor-bot
+        
+      containers:
+      - name: argo-tag-test
+        image: orca-harbor.cloud.hancom.com/test-harbor/tag
+        resources: {}
+        command:
+        - sleep
+        - infinity
+status: {}
